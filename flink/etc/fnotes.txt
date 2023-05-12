@@ -1,0 +1,29 @@
+./start-cluster.sh
+
+Starting cluster.
+Starting standalonesession daemon on host Matar-11.
+Starting taskexecutor daemon on host Matar-11.
+
+
+https://thecodinginterface.com/blog/kafka-source-sink-with-apache-flink-table-api/
+
+https://thecodinginterface.com/courses/
+
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiovJWEv-P9AhVfV6QEHTwdC3YQwqsBegQIOxAE&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DWwvpsqyWsc4&usg=AOvVaw0Mx2JHEf409ThSjWYD4K2j
+
+https://www.quix.io/blog/implementing-stream-processing-python/
+
+-----------------------------------------------------------------------
+
+
+
+-----------------------------------------------------------------------
+KAFKA_CLUSTER_ID="$(kafka_2.13-3.4.0/bin/kafka-storage.sh random-uuid)"
+
+kafka_2.13-3.4.0/bin/kafka-storage.sh format -t $KAFKA_CLUSTER_ID -c kafka_2.13-3.4.0/config/kraft/server.properties
+
+kafka_2.13-3.4.0/bin/kafka-server-start.sh kafka_2.13-3.4.0/config/kraft/server.properties
+
+kafka_2.13-3.4.0/bin/kafka-topics.sh --describe --topic quickstart-events --bootstrap-server localhost:9092
+
+kafka_2.13-3.4.0/bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
